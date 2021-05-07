@@ -33,7 +33,7 @@ namespace Tranzact.Search
             using (var serviceScope = Startup.Host.Services.CreateScope())
             {
                 var service = serviceScope.ServiceProvider;
-                var figth = service.GetRequiredService<FigthManager<FigthResponse>>();
+                var figth = service.GetRequiredService<FigthManager<FigthResponse,SearchResponse>>();
                 var response = await figth.FigthResultAsync(args);
                 Console.WriteLine(response.Mensaje);
             }

@@ -50,7 +50,7 @@ namespace Tranzact.Search
             });
             services.AddScoped<ISearchManager<SearchResponse>, SearchManager<SearchResponse>>();
             //services.TryAddScoped<SearchManager>();
-            services.TryAddScoped<FigthManager<FigthResponse>>();
+            services.TryAddScoped<FigthManager<FigthResponse,SearchResponse>>();
         }
     }
 }

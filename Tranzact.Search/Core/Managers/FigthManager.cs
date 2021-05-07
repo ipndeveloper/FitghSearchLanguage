@@ -8,12 +8,12 @@ using Tranzact.Search.Models;
 
 namespace Tranzact.Search.Managers
 {
-    public class FigthManager<TFigth> where TFigth : FigthResponse
+    public class FigthManager<TFigth,TSearch>  where TFigth : FigthResponse  where TSearch : SearchResponse
     {
-        private readonly ISearchManager<SearchResponse> _search;
+        private readonly ISearchManager<TSearch> _search;
         public virtual ILogger _logger { get; set; }
-        public FigthManager(ISearchManager<SearchResponse> search ,
-                            ILogger<FigthManager<TFigth>> logger)
+        public FigthManager(ISearchManager<TSearch> search ,
+                            ILogger<FigthManager<TFigth, TSearch>> logger)
         {
             _search = search;
             _logger = logger;
@@ -39,7 +39,7 @@ namespace Tranzact.Search.Managers
             return (TFigth)output;
         }
 
-        private string  GetOutputResult(List<SearchResponse> responses)
+        private string  GetOutputResult(List<TSearch> responses)
         {
             if (responses == null) throw new ArgumentNullException(nameof(responses));
             StringBuilder result = new StringBuilder();

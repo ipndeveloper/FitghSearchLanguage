@@ -25,8 +25,8 @@ namespace SearchFight.Test
         private GoogleSearch _google;
         private BingSearch _bing;
         private SearchManager<SearchResponse> _searchManager;
-        private FigthManager<FigthResponse> _figthManager;
-        private Mock<ILogger<FigthManager<FigthResponse>>> _logger;
+        private FigthManager<FigthResponse, SearchResponse> _figthManager;
+        private Mock<ILogger<FigthManager<FigthResponse, SearchResponse>>> _logger;
 
         [SetUp]
         public void Setup()
@@ -72,8 +72,8 @@ namespace SearchFight.Test
         private void ConfigureFigthManager()
         {
 
-            _logger = new Mock<ILogger<FigthManager<FigthResponse>>>();
-            _figthManager = new FigthManager<FigthResponse>(_searchManager, _logger.Object);
+            _logger = new Mock<ILogger<FigthManager<FigthResponse,SearchResponse>>>();
+            _figthManager = new FigthManager<FigthResponse, SearchResponse>(_searchManager, _logger.Object);
 
         }
 

@@ -9,9 +9,9 @@ using Tranzact.Search.Models;
 
 namespace Tranzact.Search.ExampleCustom
 {
-    public class CustomFigthManager : FigthManager<CustomFigthResponse>
+    public class CustomFigthManager : FigthManager<CustomFigthResponse,CustomSearchResponse>
     {
-        public CustomFigthManager(ISearchManager<SearchResponse> search, ILogger<CustomFigthManager> logger) : base(search, logger)
+        public CustomFigthManager(ISearchManager<CustomSearchResponse> search, ILogger<CustomFigthManager> logger) : base(search, logger)
         {
         }
 
