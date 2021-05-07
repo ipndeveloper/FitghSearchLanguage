@@ -1,0 +1,9 @@
+**/[Oo]bj/
+**/[Dd]ebug/
+**/[Dd]ebugPublic/
+**/[Rr]elease/
+**/[Rr]eleases/
+**/[Bb]in/
+**/[Ll]og/
+*.pdb
+*.dll
